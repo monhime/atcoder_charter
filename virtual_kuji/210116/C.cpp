@@ -1,0 +1,75 @@
+#define _GLIBCXX_DEBUG
+#include <bits/stdc++.h>
+using namespace std;
+#pragma GCC target("avx")
+#pragma GCC optimize("Ofast")
+#pragma GCC optimize("unroll-loops")
+#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
+
+#define REP(i, N) for (int i = 0; i < (int)N; i++)
+#define FOR(i, a, b) for (int i = a; i < (int)b; i++)
+#define ALL(x) (x).begin(), (x).end()
+
+constexpr int MOD = 1000000007;
+constexpr long long llinf = 1LL << 62;
+constexpr int inf = 1LL << 30;
+constexpr int dy[4] = {-1, 0, 1, 0}, dx[4] = {0, -1, 0, 1};
+
+using ll = long long;
+using Pii = pair<int, int>;
+using Pill = pair<int, ll>;
+using Pll = pair<ll, ll>;
+using vi = vector<int>;
+using vb = vector<bool>;
+using vvi = vector<vi>;
+using vll = vector<ll>;
+using vvll = vector<vll>;
+
+template <class T>
+bool chmax(T& a, const T& b) {
+    if (a < b) {
+        a = b;
+        return 1;
+    }
+    return 0;
+}
+template <class T>
+bool chmin(T& a, const T& b) {
+    if (b < a) {
+        a = b;
+        return 1;
+    }
+    return 0;
+}
+
+int main(){
+    ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
+
+    int n, k;
+    cin >> n >> k;
+    vi A(n);
+    REP(i, n) cin >> A[i];
+    int idx_1;
+    REP(i, n){
+        if (A[i] == 1){
+            idx_1 = i + 1;
+            break;
+        }
+    }
+    int cunt_1, cunt_2;
+    if (idx_1 == 1){
+        cunt_1 = 0;
+    }
+    else{
+        cunt_1 = (idx_1 - k) / (k - 1) + 1;
+    }
+    if (idx_1 == n){
+        cunt_2 = 0;
+    }
+    else{
+        cunt_2 = ceil((double)(n - idx_1)/(k - 1));
+    }
+    cout << cunt_1 + cunt_2 << "\n";
+    return 0;
+}

@@ -1,0 +1,128 @@
+Last login: Thu Mar 15 13:16:19 on console
+YHnoMacbook-pro:~ derodontus$ brew update
+Already up-to-date.
+YHnoMacbook-pro:~ derodontus$ brew install vim
+==> Downloading https://homebrew.bintray.com/bottles/vim-8.0.1600.high_sierra.bo
+######################################################################## 100.0%
+==> Pouring vim-8.0.1600.high_sierra.bottle.tar.gz
+🍺  /usr/local/Cellar/vim/8.0.1600: 1,429 files, 22.9MB
+YHnoMacbook-pro:~ derodontus$ brew list vim
+/usr/local/Cellar/vim/8.0.1600/bin/ex
+/usr/local/Cellar/vim/8.0.1600/bin/rview
+/usr/local/Cellar/vim/8.0.1600/bin/rvim
+/usr/local/Cellar/vim/8.0.1600/bin/view
+/usr/local/Cellar/vim/8.0.1600/bin/vim
+/usr/local/Cellar/vim/8.0.1600/bin/vimdiff
+/usr/local/Cellar/vim/8.0.1600/bin/vimtutor
+/usr/local/Cellar/vim/8.0.1600/bin/xxd
+/usr/local/Cellar/vim/8.0.1600/share/man/ (9 files)
+/usr/local/Cellar/vim/8.0.1600/share/vim/ (1408 files)
+YHnoMacbook-pro:~ derodontus$ /usr/local/Cellar/vim/8.0.1600/bin/vim --version | grep clipboard
++clipboard         +jumplist          +persistent_undo   +virtualedit
+-ebcdic            -mouseshape        +statusline        -xterm_clipboard
+YHnoMacbook-pro:~ derodontus$ sudo mv /usr/bin/vim /usr/bin/old_vim
+Password:
+YHnoMacbook-pro:~ derodontus$ sudo ln /usr/local/Cellar/vim/8.0.1600/bin/vim /usr/bin/
+YHnoMacbook-pro:~ derodontus$ vim --version | grep clipboard
++clipboard         +jumplist          +persistent_undo   +virtualedit
+-ebcdic            -mouseshape        +statusline        -xterm_clipboard
+YHnoMacbook-pro:~ derodontus$ vim ./~vimrc
+YHnoMacbook-pro:~ derodontus$ ls
+AnacondaProjects	Untitled1.ipynb		Untitled8.ipynb
+Applications		Untitled10.ipynb	Untitled9.ipynb
+Desktop			Untitled11.ipynb	VirtualBox VMs
+Documents		Untitled12.ipynb	anaconda
+Downloads		Untitled13.ipynb	cache.ga
+Dropbox			Untitled14.ipynb	enthought
+Library			Untitled2.ipynb		installer.sh
+Movies			Untitled3.ipynb		test.txt
+Music			Untitled4.ipynb		xh.pdf
+Pictures		Untitled5.ipynb		~vimrc
+Public			Untitled6.ipynb
+Untitled.ipynb		Untitled7.ipynb
+YHnoMacbook-pro:~ derodontus$ cd Desktop/言語
+YHnoMacbook-pro:言語 derodontus$ ls
+C		Excel		MEIKAIC1S	python		vim
+C++		Java		R		swift
+YHnoMacbook-pro:言語 derodontus$ cd C++
+YHnoMacbook-pro:C++ derodontus$ ls
+AOJ	contest	test
+YHnoMacbook-pro:C++ derodontus$ cd AOJ
+YHnoMacbook-pro:AOJ derodontus$ ls
+86		a[i][j]		itr1-1.cpp	test-1.cpp
+86-1.cpp	alds1		l		test.cpp
+a.out		b[j][k]		m		test59-1.c
+a[i]		itp		n		test63-1.cpp
+YHnoMacbook-pro:AOJ derodontus$ cd alds1
+YHnoMacbook-pro:alds1 derodontus$ ls
+1-3a.cpp	59.c		69.cpp		73.cpp
+1-3b.cpp	59.cpp		72-1.cpp	86.cpp
+1-4a.cpp	63.cpp		72.cpp		a.out
+YHnoMacbook-pro:alds1 derodontus$ vim 1-4a.cpp
+YHnoMacbook-pro:alds1 derodontus$ vim 1-3b.cpp
+YHnoMacbook-pro:alds1 derodontus$ vim 1-3b1.cpp
+YHnoMacbook-pro:alds1 derodontus$ vim 1-3b1.cpp
+YHnoMacbook-pro:alds1 derodontus$ vim 1-3b1.cpp
+YHnoMacbook-pro:alds1 derodontus$ vim 1-3b1.cpp
+YHnoMacbook-pro:alds1 derodontus$ vim 1-3b.cpp
+YHnoMacbook-pro:alds1 derodontus$ vim 1-3c.cpp
+YHnoMacbook-pro:alds1 derodontus$ vim 1-3c.cpp
+YHnoMacbook-pro:alds1 derodontus$ vim 1-3c.cpp
+YHnoMacbook-pro:alds1 derodontus$ vim 1-3c.cpp
+YHnoMacbook-pro:alds1 derodontus$ emacs 1-3c.cpp
+
+#include<iostream>
+#include<cstdio>
+#include<cstdlib>
+#include<algorithm>
+#include<cstring>
+#include<string>
+using namespace std;
+
+struct Node{
+  int Key;
+  Node *next,*prev;
+
+};
+
+Node *nil;
+
+Node* listSearch(int key){
+  Node *cur=nil->next;
+  while(cur!=nil&&cur->key!=key)
+    cur=cur->next;
+  return cur;
+}
+
+void init(){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-uu-:**-F1  1-3c.cpp       All L25    (C++/l Abbrev)--------------
+Auto-saving...done

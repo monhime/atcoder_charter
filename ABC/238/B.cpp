@@ -15,9 +15,19 @@ int main() {
   ios::sync_with_stdio(false);
   cin.tie(0);
 
-  ll x;
-  cin >> x;
-  cout << x / 10 << "\n";
-
+  int n;
+  cin >> n;
+  vector<int> A(n);
+  int a;
+  int cur_a = 0;
+  REP(i, n) {
+    cin >> a;
+    cur_a = (cur_a + a) % 360;
+    A[i] = cur_a % 360;
+  }
+  sort(ALL(A));
+  int ans = max(A.front(), 360 - A.back());
+  REP(i, n - 1) { ans = max(ans, A[i + 1] - A[i]); }
+  cout << ans << "\n";
   return 0;
 }

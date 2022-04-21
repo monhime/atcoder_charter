@@ -29,21 +29,21 @@ int main() {
     }
   }
   // 1->2->4と1->3->4のダブリ
-  queue<int> que;
-  que.emplace(n - 1);
+  queue<int> Q;
+  Q.emplace(n - 1);
   vector<bool> visited(n, false);
   visited[n - 1] = true;
   ll ans = T.back();
-  while (!que.empty()) {
-    int node = que.front();
-    que.pop();
+  while (!Q.empty()) {
+    int node = Q.front();
+    Q.pop();
     for (auto &xnode : A[node]) {
       if (visited[xnode]) {
         continue;
       }
       ans += T[xnode];
       visited[xnode] = true;
-      que.emplace(xnode);
+      Q.emplace(xnode);
     }
   }
   cout << ans << "\n";

@@ -1,13 +1,13 @@
 #include <iostream>
 #include <string>
 #include <unordered_map>
+#define MAX_A 200000
 
 int main() {
   std::ios::sync_with_stdio(false);
   std::cin.tie(0);
 
   int n;
-  constexpr int maxA = 200000;
   std::cin >> n;
   std::unordered_map<int, long long> mapA;
   int a;
@@ -16,8 +16,8 @@ int main() {
     mapA[a]++;
   }
   long long ans = 0LL;
-  for (int r = 1; r <= maxA; r++) {
-    for (int p = 1; r * p <= maxA; p++) {
+  for (int r = 1; r <= MAX_A; r++) {
+    for (int p = 1; r * p <= MAX_A; p++) {
       ans += mapA[r * p] * mapA[r] * mapA[p];
     }
   }

@@ -16,12 +16,13 @@ int binary_search(int64_t a, int64_t x) {
   int64_t right = (int64_t)std::pow(10, 6);
   while (right - left > 1) {
     int64_t m = (left + right) / 2LL;
-    if (question(a, m, x))
+    if (question(a, m, x))  // xxxxxoooo
       right = m;
     else
       left = m;
   }
-  return right;  // questionがoとなる最小
+  return left;  // xとoの境界部分の左
+  //   return right;  //  xとoの境界部分の右
 }
 
 int main() {

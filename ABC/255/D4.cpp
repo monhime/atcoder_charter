@@ -45,17 +45,30 @@ int main() {
 
   sort(ALL(A));
 
-  vll S(n + 1, 0);
+  vll S(n + 1, 0ll);
   for (int i = 0; i < n; i++) {
     S[i + 1] = S[i] + A[i];
   }
+
+  // for (int i = 0; i < n; i++) {
+  //   cout << A[i] << " ";
+  // }
+  // cout << "\n";
+
+  // for (int i = 0; i < n; i++) {
+  //   cout << S[i] << " ";
+  // }
+  // cout << "\n";
+
   for (int i = 0; i < q; i++) {
     ll x;
     cin >> x;
     int idx_x = distance(A.begin(), lower_bound(ALL(A), x));
-    ll res = x * ((ll)idx_x + 1) - S[idx_x + 1];
-    res += (S[n] - S[idx_x]) - x * (n - (ll)idx_x);
-    cout << res << '\n';
+    // cout << idx_x << "\n";
+    ll lower_sum = x * (ll)idx_x - S[idx_x];
+    ll upper_sum = (S[n] - S[idx_x]) - x * (ll)(n - idx_x);
+    // cout << lower_sum << " " << upper_sum << '\n';
+    cout << lower_sum + upper_sum << '\n';
   }
   return 0;
 }

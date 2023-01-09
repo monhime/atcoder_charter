@@ -39,28 +39,50 @@ int main() {
   int H, W, n, h, w;
   cin >> H >> W >> n >> h >> w;
   vvi A(H, vi(W));
-  set<int> setA, subsetA;
+  map<int, int> mapA;
 
   for (int hh = 0; hh < H; hh++) {
     for (int ww = 0; ww < W; ww++) {
       cin >> A[hh][ww];
-      setA.emplace(A[hh][ww]);
+      mapA[A[hh][ww]]++;
     }
   }
 
   for (int k = 0; k <= H - h; k++) {
+    map<int, int> submapA;
     // 左端だけ毎回カウント
     for (int i = k; i < k + h; i++) {
       for (int j = 0; j < w; j++) {
-        subsetA.emplace(A[i][j]);
+        submapA[A[i][j]]++;
       }
     }
+    int ans = mapA.size();
+    // 黒塗りした中の種類カウント
+    for (auto& submpA : submapA) {
+      if (mapA[submpA.first] == submpA.second) {
+        ans--;
+      }
+    }
+    cout << ans << " ";
+
+    // 各(k,l)について
     for (int l = 0; l < W - w; l++) {
       int old_col = l;
       int new_col = l + w;
       for (int i = k; i < k + h; i++) {
-            }
+        submapA[A[i][new_col]]++;
+        submapA[A[i][old_col]]--;
+      }
+      int ans = mapA.size();
+      // 黒塗りした中の種類カウント
+      for (auto& submpA : submapA) {
+        if (mapA[submpA.first] == submpA.second) {
+          ans--;
+        }
+      }
+      cout << ans << " ";
     }
+    cout << "\n";
   }
 
   return 0;

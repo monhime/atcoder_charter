@@ -36,19 +36,5 @@ int main() {
   ios::sync_with_stdio(false);  // std::cinとscanf()を混ぜない
   cin.tie(nullptr);             // インタラクティブ実行不可
 
-  int t;
-  cin >> t;
-  for (int tt = 0; tt < t; tt++) {
-    ll l, r;
-    cin >> l >> r;
-    ll ans = 0ll;
-    for (ll c = l; c <= r - l; c++) {
-      ll cunt = (r - c) - max(l, 2 * l - c) + 1;
-      // debug(cunt);
-      ans += cunt;
-    }
-    cout << ans << "\n";
-  }
-
-  return 0;
+    return 0;
 }

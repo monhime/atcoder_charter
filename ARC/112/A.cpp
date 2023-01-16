@@ -12,8 +12,10 @@ using ll = long long;
 using Pii = pair<int, int>;
 using Pll = pair<ll, ll>;
 using vi = vector<int>;
-using vvi = vector<vector<int>>;
+using vvi = vector<vi>;
 using vll = vector<ll>;
+using vvll = vector<vll>;
+using vb = vector<bool>;
 
 template <class T>
 bool chmax(T& a, const T& b) {
@@ -38,16 +40,14 @@ int main() {
 
   int t;
   cin >> t;
-  for (int tt = 0; tt < t; tt++) {
+  for (int i = 0; i < t; i++) {
     ll l, r;
     cin >> l >> r;
-    ll ans = 0ll;
-    for (ll c = l; c <= r - l; c++) {
-      ll cunt = (r - c) - max(l, 2 * l - c) + 1;
-      // debug(cunt);
-      ans += cunt;
+    if (r >= 2 * l) {
+      cout << (r - 2ll * l + 1ll) * (r - 2ll * l + 2ll) / 2ll << "\n";
+    } else {
+      cout << "0\n";
     }
-    cout << ans << "\n";
   }
 
   return 0;
